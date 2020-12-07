@@ -28,7 +28,7 @@ Dance Revolution: Long Sequence Dance Generation with Music via Curriculum Learn
 Please put the downloaded `data/` into the project directory `DanceRevolution/`.
 The pose sequences are extracted from original dance videos with 30FPS while the audio data is m4a format. Note that, we develope a simple linear interpolation alogrithm to find missing keyjoints to reduce the noise in the pose data, which is introduced by the imperfect extraction of OpenPose.
 
-- If you plan to train the model with your own dance data, please install [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) for the human pose extraction. After that, please follow the hierarchical structure of directory `data/` to place your own extracted data and run `prepro.py`.
+- If you plan to train the model with your own dance data, please install [[OpenPose]](https://github.com/CMU-Perceptual-Computing-Lab/openpose) for the human pose extraction. After that, please follow the hierarchical structure of directory `data/` to place your own extracted data and run `prepro.py` to generate the training data and test data.
 
 ### Generated Example Videos
 - Ballet style
