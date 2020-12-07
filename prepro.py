@@ -11,11 +11,11 @@ import numpy as np
 from extractor import FeatureExtractor
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--input_audio_dir', type=str, default='github_data/audio')
-parser.add_argument('--input_dance_dir', type=str, default='github_data/json')
+parser.add_argument('--input_audio_dir', type=str, default='data/audio')
+parser.add_argument('--input_dance_dir', type=str, default='data/json')
 
-parser.add_argument('--train_dir', type=str, default='github_data/train')
-parser.add_argument('--valid_dir', type=str, default='github_data/valid')
+parser.add_argument('--train_dir', type=str, default='data/train')
+parser.add_argument('--valid_dir', type=str, default='data/valid')
 
 parser.add_argument('--sampling_rate', type=int, default=15360)
 args = parser.parse_args()
