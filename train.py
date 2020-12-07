@@ -113,8 +113,8 @@ def train(model, training_data, validation_data, optimizer, device, args, log):
 def get_args():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--train_dir', type=str, default='data/train_1min')
-    parser.add_argument('--valid_dir', type=str, default='data/valid_1min')
+    parser.add_argument('--train_dir', type=str, default='data/train')
+    parser.add_argument('--valid_dir', type=str, default='data/valid')
     parser.add_argument('--data_type', type=str, default='2D', help='the type of pose data')
     parser.add_argument('--output_dir', metavar='PATH', default='checkpoints/')
 

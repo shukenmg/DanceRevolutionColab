@@ -4,8 +4,8 @@
 
 model_dir=checkpoints_windowsize100_hidden1024_fixedsteps10_alpha0.01
 
-python train.py --train_dir data/train_1min \
-                --valid_dir data/valid_1min \
+python train.py --train_dir data/train \
+                --valid_dir data/valid \
                 --output_dir ${model_dir} \
                 --batch_size 32 \
                 --lr 0.0001 \
