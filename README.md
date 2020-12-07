@@ -62,7 +62,7 @@ We map the generated skeleton dances to the photo-realistic videos by [vid2vid](
 
 
 ### Citation
-If you find this work useful for your research, please cite the following paper :-)
+If you find this work useful for your research, please cite the following paper:
 ```
 @article{huang2020dance,
   title={Dance Revolution: Long Sequence Dance Generation with Music via Curriculum Learning},
