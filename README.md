@@ -21,7 +21,8 @@ Ruozi Huang*, [Huang Hu*](https://stonyhu.github.io/), [Wei Wu](https://sites.go
 
 ### Requirements
 - Python 3.7
-- PyTorch 0.4.1
+- PyTorch 1.3.1
+Run `sh install.sh` to configure the environment.
 
 ### Dataset and Installation
 - We released the dance pose data and the corresponding audio data into [[Google Drive]](https://drive.google.com/file/d/1FGGF7P_gR8ssfewhVogskvDyu6Gb6Dr8/view?usp=sharing). 
