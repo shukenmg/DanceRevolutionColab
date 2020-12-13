@@ -15,7 +15,7 @@ parser.add_argument('--input_audio_dir', type=str, default='data/audio')
 parser.add_argument('--input_dance_dir', type=str, default='data/json')
 
 parser.add_argument('--train_dir', type=str, default='data/train')
-parser.add_argument('--valid_dir', type=str, default='data/valid')
+parser.add_argument('--test_dir', type=str, default='data/test')
 
 parser.add_argument('--sampling_rate', type=int, default=15360)
 args = parser.parse_args()
@@ -24,8 +24,8 @@ extractor = FeatureExtractor()
 
 if not os.path.exists(args.train_dir):
     os.mkdir(args.train_dir)
-if not os.path.exists(args.valid_dir):
-    os.mkdir(args.valid_dir)
+if not os.path.exists(args.test_dir):
+    os.mkdir(args.test_dir)
 
 
 
@@ -151,14 +151,14 @@ def align(musics, dances):
 
 
 def split_data(fnames):
-    print('---------- Split data into train and valid ----------')
+    print('---------- Split data into train and test ----------')
     indices = list(range(len(fnames)))
     random.shuffle(indices)
     train = indices[10:]
-    valid = indices[:10]
+    test = indices[:10]
 
 
-    return train, valid
+    return train, test
 
 
 def save(args, musics, dances, inner_dir):
@@ -167,11 +167,11 @@ def save(args, musics, dances, inner_dir):
     # fnames = fnames[:20]  # for debug
     assert len(fnames)*2 == len(musics) == len(dances), 'alignment'
 
-    train_idx, valid_idx = split_data(fnames)
+    train_idx, test_idx = split_data(fnames)
     train_idx = sorted(train_idx)
     print(f'train ids: {[fnames[idx] for idx in train_idx]}')
-    valid_idx = sorted(valid_idx)
-    print(f'valid ids: {[fnames[idx] for idx in valid_idx]}')
+    test_idx = sorted(test_idx)
+    print(f'test ids: {[fnames[idx] for idx in test_idx]}')
 
     print('---------- train data ----------')
 
@@ -185,10 +185,10 @@ def save(args, musics, dances, inner_dir):
                 }
                 json.dump(sample_dict, f)
 
-    print('---------- valid data ----------')
-    for idx in valid_idx:
+    print('---------- test data ----------')
+    for idx in test_idx:
         for i in range(2):
-            with open(os.path.join(args.valid_dir, f'{inner_dir+"_"+fnames[idx]+"_"+str(i)}.json'), 'w') as f:
+            with open(os.path.join(args.test_dir, f'{inner_dir+"_"+fnames[idx]+"_"+str(i)}.json'), 'w') as f:
                 sample_dict = {
                     'id': fnames[idx]+"_"+str(i),
                     'music_array': musics[idx*2+i],
