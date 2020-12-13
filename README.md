@@ -22,6 +22,7 @@ Ruozi Huang*, [Huang Hu*](https://stonyhu.github.io/), [Wei Wu](https://sites.go
 ### Requirements
 - Python 3.7
 - PyTorch 1.3.1
+
 Run `sh install.sh` to configure the environment.
 
 ### Dataset and Installation
