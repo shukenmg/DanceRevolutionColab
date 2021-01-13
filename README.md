@@ -16,7 +16,7 @@ This repo is the PyTorch implementation of "Dance Revolution: Long-Term Dance Ge
 
 ### Paper 
 Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning. <br/>
-Ruozi Huang*, [Huang Hu*](https://stonyhu.github.io/), [Wei Wu](https://sites.google.com/view/wei-wu-homepage), [Kei Sawada](http://www.sp.nitech.ac.jp/~swdkei/index.html), [Mi Zhang](http://homepage.fudan.edu.cn/zhangmi/en) and Daxin Jiang. <br/>
+Ruozi Huang*, [Huang Hu*](https://stonyhu.github.io/), [Wei Wu](https://sites.google.com/view/wei-wu-homepage), [Kei Sawada](http://www.sp.nitech.ac.jp/~swdkei/index.html), [Mi Zhang](http://homepage.fudan.edu.cn/zhangmi/en) and [Daxin Jiang](https://www.microsoft.com/en-us/research/people/djiang/). <br/>
 [[arXiv]](https://arxiv.org/pdf/2006.06119.pdf) [[YouTube]](https://www.youtube.com/watch?v=P6yhfv3vpDI) [Project]
 
 ### Requirements
@@ -68,7 +68,7 @@ If you find this work useful for your research, please cite the following paper:
 ```
 @article{huang2020dance,
   title={Dance Revolution: Long Sequence Dance Generation with Music via Curriculum Learning},
-  author={Huang, Ruozi and Hu, Huang and Wu, Wei and Sawada, Kei and Zhang, Mi},
+  author={Huang, Ruozi and Hu, Huang and Wu, Wei and Sawada, Kei and Zhang, Mi and Jiang, Daxin},
   journal={arXiv preprint arXiv:2006.06119},
   year={2020}
 }
