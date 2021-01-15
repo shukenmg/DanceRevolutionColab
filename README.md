@@ -71,7 +71,6 @@ huang2021,
 title={ Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning},
 author={Ruozi Huang and Huang Hu and Wei Wu and Kei Sawada and Mi Zhang and Daxin Jiang},
 booktitle={International Conference on Learning Representations},
-year={2021},
-url={https://openreview.net/forum?id=xGZG2kS5bFk}
+year={2021}
 }
 ```
