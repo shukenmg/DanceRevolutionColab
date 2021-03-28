@@ -10,6 +10,9 @@ The dataset is still going through the internal review, please wait.
 **\*\*\*\*\*\*\*\*\* September 7, 2020 \*\*\*\*\*\*\*\*\*** <br>
 The code & pose data are released!
 
+**\*\*\*\*\*\*\*\*\* March 28, 2021 \*\*\*\*\*\*\*\*\*** <br>
+Lastest version of codebase is preparing and will be released later.
+
 
 ### Introduction
 This repo is the PyTorch implementation of "Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning". Our proposed approach significantly outperforms the existing SOTAs in extensive experiments, including automatic metrics and human judgements. It can generate creative long dance sequences, e.g., about <strong>one-minute length under 15 FPS</strong>, from the input music clips, which are smooth, natural-looking, diverse, style-consistent and beat-matching with the music from test set. With the help of 3D human pose estimation and 3D animation driving, this technique can be used to drive various 3D character models such as the 3D model of Hatsune Miku (very popular virtual character in Japan), and has the great potential for the virtual advertisement video generation.
@@ -21,7 +24,7 @@ Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning.
 
 ### Requirements
 - Python 3.7
-- PyTorch 1.3.1
+- PyTorch 1.6.0
 
 Run `sh install.sh` to configure the environment.
 
