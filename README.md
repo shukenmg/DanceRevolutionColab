@@ -10,8 +10,8 @@ The dataset is still going through the internal review, please wait.
 **\*\*\*\*\*\*\*\*\* September 7, 2020 \*\*\*\*\*\*\*\*\*** <br>
 The code & pose data are released!
 
-**\*\*\*\*\*\*\*\*\* March 28, 2021 \*\*\*\*\*\*\*\*\*** <br>
-Lastest version of codebase is preparing and will be released later.
+**\*\*\*\*\*\*\*\*\* April 4, 2021 \*\*\*\*\*\*\*\*\*** <br>
+Two versions of codebase is released. Have a try to train your AI dancer!
 
 
 ### Introduction
@@ -26,14 +26,15 @@ Ruozi Huang*, [Huang Hu*](https://stonyhu.github.io/), [Wei Wu](https://sites.go
 - Python 3.7
 - PyTorch 1.6.0
 
-Run `sh install.sh` to configure the environment.
-
 ### Dataset and Installation
 - We released the dance pose data and the corresponding audio data into [[Google Drive]](https://drive.google.com/file/d/1FGGF7P_gR8ssfewhVogskvDyu6Gb6Dr8/view?usp=sharing). 
-Please put the downloaded `data/` into the project directory `DanceRevolution/` and run `prepro.py` that will generate the training data directory `data/train` and test data directory `data/test`.
+Please put the downloaded `data/` into the project directory `DanceRevolution/(v1 or v2)` and run `prepro.py` that will generate the training data directory `data/train` and test data directory `data/test`.
 The pose sequences are extracted from the collected dance videos with original 30FPS while the audio data is m4a format. Note that, we develope a simple linear interpolation alogrithm `interpolate_missing_keyjoints.py` to find missing keyjoints to reduce the noise in the pose data, which is introduced by the imperfect extraction of OpenPose.
 
 - If you plan to train the model with your own dance data, please install [[OpenPose]](https://github.com/CMU-Perceptual-Computing-Lab/openpose) for the human pose extraction. After that, please follow the hierarchical structure of directory `data/` to place your own extracted data and run `prepro.py` to generate the training data and test data.
+
+### Training Issues
+We released two versions of codebases that have been tested. In V1 version, the local self-attention module is implemented base on the [longformer](https://github.com/allenai/longformer) that provides the custom CUDA kernel to acclerate the training speed and save GPU memory for long sequence inputs. While V2 version just implements the local self-attention module via the naive PyTorch implementation, i.e., the attention mask operations. In practice, we found the performance of V2 is more stable 
 
 ### Generated Example Videos
 - Ballet style
