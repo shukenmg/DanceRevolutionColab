@@ -11,11 +11,11 @@ import numpy as np
 from extractor import FeatureExtractor
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--input_audio_dir', type=str, default='data/audio')
-parser.add_argument('--input_dance_dir', type=str, default='data/json')
+parser.add_argument('--input_audio_dir', type=str, default='../data/audio')
+parser.add_argument('--input_dance_dir', type=str, default='../data/json')
 
-parser.add_argument('--train_dir', type=str, default='data/train')
-parser.add_argument('--test_dir', type=str, default='data/test')
+parser.add_argument('--train_dir', type=str, default='data/train_1min')
+parser.add_argument('--test_dir', type=str, default='data/test_1min')
 
 parser.add_argument('--sampling_rate', type=int, default=15360)
 args = parser.parse_args()
@@ -42,7 +42,6 @@ def extract_acoustic_feature(input_audio_dir):
         print(f'Process -> {audio_file}')
         ### load audio ###
         sr = args.sampling_rate
-        # sr = 48000
         loader = essentia.standard.MonoLoader(filename=audio_file, sampleRate=sr)
         audio = loader()
         audio = np.array(audio).T
