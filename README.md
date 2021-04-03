@@ -11,7 +11,7 @@ The dataset is still going through the internal review, please wait.
 The code & pose data are released!
 
 **\*\*\*\*\*\*\*\*\* April 4, 2021 \*\*\*\*\*\*\*\*\*** <br>
-Two versions of codebase is released. Have a try to train your AI dancer!
+Two versions of codebase are released. Have a try to train your AI dancer!
 
 
 ### Introduction
@@ -34,7 +34,9 @@ The pose sequences are extracted from the collected dance videos with original 3
 - If you plan to train the model with your own dance data, please install [[OpenPose]](https://github.com/CMU-Perceptual-Computing-Lab/openpose) for the human pose extraction. After that, please follow the hierarchical structure of directory `data/` to place your own extracted data and run `prepro.py` to generate the training data and test data.
 
 ### Training Issues
-We released two versions of codebases that have been tested. In V1 version, the local self-attention module is implemented base on the [longformer](https://github.com/allenai/longformer) that provides the custom CUDA kernel to acclerate the training speed and save GPU memory for long sequence inputs. While V2 version just implements the local self-attention module via the naive PyTorch implementation, i.e., the attention mask operations. In practice, we found the performance of V2 is more stable 
+We released two versions of codebases that have been tested. In V1 version, the local self-attention module is implemented base on the [longformer](https://github.com/allenai/longformer) that provides the custom CUDA kernel to acclerate the training speed and save GPU memory for long sequence inputs. While V2 version just implements the local self-attention module via the naive PyTorch implementation, i.e., the attention mask operations. In practice, we found the performance of V2 is more stable and recommend to use V2 version.
+- Small batch sizes, such as 32 and 16, would help model to converge better and the model usually converges well at around 3000 epochs. It takes about 3 days to train the model well under these settings.
+- Increasing sliding window size of local self-attention is beneficial to the more stable performance while the cost (e.g., training time and GPU memory usage) would become high. This point has been justified in the ablation study of encoder structures in the paper. So if you are free of GPU resource limitation, we recommend to use the large sliding window size.
 
 ### Generated Example Videos
 - Ballet style
