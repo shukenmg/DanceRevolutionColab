@@ -4,7 +4,7 @@ e="3000"
 random="_random"
 
 # Test
-python3 test.py --train_dir data/train_1min --test_dir data/test_1min \
+python3 test.py --train_dir ../data/train_1min --test_dir ../data/test_1min \
 --output_dir outputs/${version}/epoch_${e}${random} --model checkpoints/${version}/epoch_${e}.pt \
 --visualize_dir visualizations/${version}/epoch_${e}${random}
 
