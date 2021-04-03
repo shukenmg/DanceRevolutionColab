@@ -57,8 +57,8 @@ We released two versions of codebases that have passed the test. In V1 version, 
   <img src='imgs/pop-2.gif' width='400'/>
 </p>
 
-- Photo-Realisitc Videos by [vid2vid](https://github.com/NVIDIA/vid2vid) </br>
-We map the generated skeleton dances to the photo-realistic videos by [vid2vid](https://github.com/NVIDIA/vid2vid). Specifically, We record a random dance video of a team memebr to train the vid2vid model. Then we generate photo-realistic videos by feeding the generated skeleton dances to the trained vid2vid model. Note that, our team member has authorized us the usage of her portrait in following demos. 
+- Photo-Realisitc Videos by [Video-to-Video](https://github.com/NVIDIA/vid2vid) </br>
+We map the generated skeleton dances to the photo-realistic videos by [Video-to-Video](https://github.com/NVIDIA/vid2vid). Specifically, We record a random dance video of a team memebr to train the vid2vid model. Then we generate photo-realistic videos by feeding the generated skeleton dances to the trained vid2vid model. Note that, our team member has authorized us the usage of her portrait in following demos. 
 <p align='center'>
   <img src='imgs/skeleton-1.gif' width='428'/>
   <img src='imgs/kazuna-crop-1.gif' width='400'/>
