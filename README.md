@@ -11,7 +11,7 @@ The dataset is still going through the internal review, please wait.
 The code & pose data are released!
 
 **\*\*\*\*\*\*\*\*\* April 4, 2021 \*\*\*\*\*\*\*\*\*** <br>
-Two versions of codebase are released. Have a try to train your AI dancer!
+V2 version of codebase is released. Have a try to train your AI dancer!
 
 
 ### Introduction
