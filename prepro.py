@@ -28,7 +28,6 @@ if not os.path.exists(args.test_dir):
     os.mkdir(args.test_dir)
 
 
-
 def extract_acoustic_feature(input_audio_dir):
     print('---------- Extract features from raw audio ----------')
     musics = []
@@ -82,7 +81,6 @@ def extract_acoustic_feature(input_audio_dir):
         feature = feature.transpose(1, 0)
         print(f'acoustic feature -> {feature.shape}')
         musics.append(feature.tolist())
-    
 
     return musics
 
