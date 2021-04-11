@@ -43,7 +43,7 @@ We released two versions of codebases that have passed the test. In V1 version, 
 
 
 ### Model
-Will release later.
+We will release a pre-trained version later.
 
 
 ### Generated Example Videos
