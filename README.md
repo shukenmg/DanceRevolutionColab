@@ -19,7 +19,7 @@ This repo is the PyTorch implementation of "Dance Revolution: Long-Term Dance Ge
 
 ### Paper 
 Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning. <strong>ICLR 2021</strong>. <br/>
-[Ruozi Huang*](https://github.com/rose1111111), [Huang Hu*](https://stonyhu.github.io/), [Wei Wu](https://sites.google.com/view/wei-wu-homepage), [Kei Sawada](http://www.sp.nitech.ac.jp/~swdkei/index.html), [Mi Zhang](http://homepage.fudan.edu.cn/zhangmi/en) and [Daxin Jiang](https://www.microsoft.com/en-us/research/people/djiang/). <br/> 
+Ruozi Huang*, [Huang Hu*](https://stonyhu.github.io/), [Wei Wu](https://sites.google.com/view/wei-wu-homepage), [Kei Sawada](http://www.sp.nitech.ac.jp/~swdkei/index.html), [Mi Zhang](http://homepage.fudan.edu.cn/zhangmi/en) and [Daxin Jiang](https://www.microsoft.com/en-us/research/people/djiang/). <br/> 
 [[Paper]](https://openreview.net/pdf?id=xGZG2kS5bFk) [[YouTube]](https://youtu.be/lmE20MEheZ8) [Project]
 
 ### Requirements
@@ -39,7 +39,11 @@ Please put the downloaded `data/` into the project directory `DanceRevolution/` 
 ### Training Issues
 We released two versions of codebases that have passed the test. In V1 version, the local self-attention module is implemented base on the [longformer](https://github.com/allenai/longformer) that provides the custom CUDA kernel to accelerate the training speed and save GPU memory for long sequence inputs. While V2 version just implements the local self-attention module via the naive PyTorch implementation, i.e., the attention mask operations. In practice, we found the performance of V2 is more stable and recommend to use V2 version. Here are some training tricks that may be helpful for you:
 - Small batch sizes, such as 32 and 16, would help model to converge better and the model usually converges well at around the 3000-th epoch. It takes about 3 days to train the model well under these settings.
-- Increasing sliding window size of local self-attention is beneficial to the more stable performance while the cost (e.g., training time and GPU memory usage) would become high. This point has been justified in the ablation study of encoder structures in the paper. So if you are free of GPU resource limitation, we recommend to use the large sliding window size for training.
+- Increasing sliding window size of local self-attention is beneficial to the more stable performance while the cost (e.g., training time and GPU memory usage) would become high. This point has been empirically justified in the ablation study of encoder structures in the paper. So if you are free of GPU resource limitation, we recommend to use the large sliding window size for training.
+
+
+### Model
+Will release later.
 
 
 ### Generated Example Videos
