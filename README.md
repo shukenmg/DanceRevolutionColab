@@ -42,10 +42,6 @@ We released two versions of codebases that have passed the test. In V1 version, 
 - Increasing sliding window size of local self-attention is beneficial to the more stable performance while the cost (e.g., training time and GPU memory usage) would become high. This point has been empirically justified in the ablation study of encoder structures in the paper. So if you are free of GPU resource limitation, we recommend to use the large sliding window size for training.
 
 
-### Model
-We will release a pre-trained version later.
-
-
 ### Generated Example Videos
 - Ballet style
 <p align='center'>
