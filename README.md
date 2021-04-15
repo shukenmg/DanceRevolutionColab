@@ -41,6 +41,8 @@ We released two versions of codebases that have passed the test. In V1 version, 
 - Small batch sizes, such as 32 and 16, would help model to converge better and the model usually converges well at around the 3000-th epoch. It takes about 3 days to train the model well under these settings.
 - Increasing sliding window size of local self-attention is beneficial to the more stable performance while the cost (e.g., training time and GPU memory usage) would become high. This point has been empirically justified in the ablation study of encoder structures in the paper. So if you are free of GPU resource limitation, we recommend to use the large sliding window size for training.
 
+### Model
+We will release a pre-trained model and inference code after the proceedings of ICLR 2021, please wait.
 
 ### Generated Example Videos
 - Ballet style
