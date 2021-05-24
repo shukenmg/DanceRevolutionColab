@@ -53,7 +53,7 @@ python3 inference.py --test_dir music/viva_la_vida \
   - `test_dir`: the directory to store input .m4a file
   - `output_dir`: the directory to store generated dance motion sequences
   - `model`: the best checkpoint
-  - `dance_num`: the number of generated dance motion sequences needs to generated for one song
+  - `dance_num`: the number of generated dance motion sequences needs to be generated for one song
   
 Moreover, we also provide the `inference.sh` to generate dance motion sequences for the test music and synthesize final dance videos for the generated results. Note that, our current system only supports the `m4a` music format. But [Online Audio Converter](https://online-audio-converter.com/) could help you convert other music format into m4a with **Standard 128k Quality option**.
 
