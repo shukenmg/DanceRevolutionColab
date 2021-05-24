@@ -53,7 +53,7 @@ data/
 └─── test_1min/
 ```
 - Dirs
-  - `audio`: the directory to store input .m4a file for three styles respectively
+  - `audio`: the directory to store .m4a file for three styles respectively
   - `json`: the directory to store dance motion sequences for three styles respectively
   - `train_1min`: the training dance motion sequences (1 min)
   - `test_1min`: the test dance motion sequences (1 min)
