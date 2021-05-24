@@ -49,7 +49,8 @@ python3 inference.py --test_dir music/viva_la_vida \
                      --model checkpoints/epoch_best.pt \
                      --dance_num 8
 ```
-Moreover, we also provide the `inference.sh` to generate dance motion sequences for the test music and synthesize final dance videos for the generated results.
+Moreover, we also provide the `inference.sh` to generate dance motion sequences for the test music and synthesize final dance videos for the generated results. Note that, our current system only supports the `m4a` music format. But the [Online Audio Converter](https://online-audio-converter.com/) could help you convert other music format into m4a with **Standard 128k Quality option** as follow:
+
 
 ### Model
 We will release a pre-trained model and inference code after the main conference of ICLR 2021, please wait.
