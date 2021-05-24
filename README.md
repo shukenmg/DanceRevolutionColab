@@ -41,6 +41,15 @@ We released two versions of codebases that have passed the test. In V1 version, 
 - Small batch sizes, such as 32 and 16, would help model to converge better and the model usually converges well at around the 3000-th epoch. It takes about 3 days to train the model well under these settings.
 - Increasing sliding window size of local self-attention is beneficial to the more stable performance while the cost (e.g., training time and GPU memory usage) would become high. This point has been empirically justified in the ablation study of encoder structures in the paper. So if you are free of GPU resource limitation, we recommend to use the large sliding window size for training.
 
+### Inference
+The inference pipeline has been released, run the following command to generate dance motion sequences for the test music:
+```python
+python3 inference.py --test_dir music/viva_la_vida \
+                     --output_dir outputs/viva_la_vida \
+                     --model checkpoints/epoch_best.pt \
+                     --dance_num 8
+```
+
 ### Model
 We will release a pre-trained model and inference code after the main conference of ICLR 2021, please wait.
 
@@ -77,7 +86,7 @@ We map the generated skeleton dances to the photo-realistic videos by [Video-to-
 
 ### Citation
 If you find this work useful for your research, please cite the following paper:
-```
+```bibtex
 @inproceedings{
   huang2021,
   title={ Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning},
