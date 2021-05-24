@@ -32,25 +32,16 @@ Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning.
 Please put the downloaded `data/` into the project directory `DanceRevolution/` and run `prepro.py` that will generate the training data directory `data/train_1min` and test data directory `data/test_1min`. The tree directory of `data/` is displayed as follow:
 ```
 data/
-│
-└─── audio/
-│      │
-│      └─── ballet_1min/
-│      │
-│      └─── hiphop_1min/
-│      │
-│      └─── pop_1min/
-└─── json/
-│      │
-│      └─── ballet_1min/
-│      │
-│      └─── hiphop_1min/
-│      │
-│      └─── pop_1min/
-│   
-└─── train_1min/
-│
-└─── test_1min/
+├── audio/
+|   ├── ballet_1min/
+|   ├── hiphop_1min/
+|   ├── pop_1min/
+├── json/
+|   ├── ballet_1min/
+|   ├── hiphop_1min/
+|   ├── pop_1min/
+├── train_1min
+├── test_1min
 ```
 - Dirs
   - `audio`: the directory to store .m4a file for three styles respectively
