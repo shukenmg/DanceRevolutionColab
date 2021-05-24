@@ -52,6 +52,12 @@ data/
 │
 └─── test_1min/
 ```
+- Dirs
+  - `audio`: the directory to store input .m4a file for three styles respectively
+  - `json`: the directory to store dance motion sequences for three styles respectively
+  - `train_1min`: the training dance motion sequences (1 min)
+  - `test_1min`: the test dance motion sequences (1 min)
+
 The default `data/train_1min` and `data/test_1min` is our train/test division. The pose sequences are extracted from the collected dance videos with original 30FPS while the audio data is m4a format. After the generation is finished, you can run `interpolate_to30fps.py` to increase the 15FPS to 30FPS to produce visually smoother dance videos for the generated results.
 
 - If you plan to train the model with your own dance data (2D), please install [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) for the human pose extraction. After that, please follow the hierarchical structure of directory `data/` to place your own extracted data and run `prepro.py` to generate the training data and test data. Note that, we develope a `interpolate_missing_keyjoints.py` script to find the missing keyjoints to reduce the noise in the pose data, which is introduced by the imperfect extraction of OpenPose.
