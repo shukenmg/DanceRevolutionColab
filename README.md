@@ -34,8 +34,19 @@ Please put the downloaded `data/` into the project directory `DanceRevolution/` 
 ./data
 │
 └─── audio/
-│  
+│      │
+│      └─── ballet_1min
+│      │
+│      └─── hiphop_1min
+│      │
+│      └─── pop_1min
 └─── json/
+│      │
+│      └─── ballet_1min
+│      │
+│      └─── hiphop_1min
+│      │
+│      └─── pop_1min
 │   
 └─── train_1min/
 │
