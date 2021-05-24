@@ -4,7 +4,7 @@
 **\*\*\*\*\*\*\*\*\* June 19, 2020 \*\*\*\*\*\*\*\*\*** <br>
 The code and data are going through the internal review and will be released later!
 
-**\*\*\*\*\*\*\*\*\* August 26, 2020 \*\*\*\*\*\*\*\*\*** <br>
+**\*\*\*\*\*\*\*\*\* August 26, 2020 \*\*\*\*\*\*\*\*\*\*\*\*** <br>
 The dataset is still going through the internal review, please wait.
 
 **\*\*\*\*\*\*\*\*\* September 7, 2020 \*\*\*\*\*\*\*\*\*** <br>
