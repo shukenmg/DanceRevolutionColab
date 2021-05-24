@@ -55,7 +55,7 @@ python3 inference.py --test_dir music/viva_la_vida \
   - `model`: the best checkpoint
   - `dance_num`: the number of generated dance motion sequences needs to be generated for one song
   
-Moreover, we also provide the `inference.sh` to generate dance motion sequences for the test music and synthesize final dance videos for the generated results. Note that, our current system only supports the `m4a` music format. But [Online Audio Converter](https://online-audio-converter.com/) could help you convert other music format into m4a with **Standard 128k Quality option**.
+Moreover, we also provide the `inference.sh` to generate dance motion sequences（15FPS) for the test music. Then we increase the FPS of generated motion sequences from 15FPS to  30FPS by the linear interpolation and synthesize final dance videos for the generated results. Note that, our current system only supports the `m4a` music format. But [Online Audio Converter](https://online-audio-converter.com/) could help you convert other music format into m4a with **Standard 128k Quality option**.
 
 
 ### Model
