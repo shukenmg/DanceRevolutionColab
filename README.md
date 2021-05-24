@@ -40,8 +40,8 @@ data/
 |   ├── ballet_1min/
 |   ├── hiphop_1min/
 |   ├── pop_1min/
-├── train_1min
-├── test_1min
+├── train_1min/
+├── test_1min/
 ```
 - Dirs
   - `audio`: the directory to store .m4a file for three styles respectively
