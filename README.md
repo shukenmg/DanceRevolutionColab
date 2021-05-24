@@ -42,13 +42,14 @@ We released two versions of codebases that have passed the test. In V1 version, 
 - Increasing sliding window size of local self-attention is beneficial to the more stable performance while the cost (e.g., training time and GPU memory usage) would become high. This point has been empirically justified in the ablation study of encoder structures in the paper. So if you are free of GPU resource limitation, we recommend to use the large sliding window size for training.
 
 ### Inference
-The inference pipeline has been released, run the following command to generate dance motion sequences for the test music:
+The inference pipeline has been released, you can run the following command to generate dance motion sequences for the test music:
 ```python
 python3 inference.py --test_dir music/viva_la_vida \
                      --output_dir outputs/viva_la_vida \
                      --model checkpoints/epoch_best.pt \
                      --dance_num 8
 ```
+Moreover, we also provide the `inference.sh` to generate dance motion sequences for the test music and synthesize final dance videos for the generated results.
 
 ### Model
 We will release a pre-trained model and inference code after the main conference of ICLR 2021, please wait.
