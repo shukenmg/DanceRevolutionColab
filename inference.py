@@ -13,14 +13,14 @@ import numpy as np
 from multiprocessing import Pool
 from functools import partial
 from random import shuffle
-from generation_model.dataset import DanceDataset, paired_collate_fn
-from generation_model.utils.functional import str2bool
-from generation_model.generator import Generator
+from v2.dataset import DanceDataset, paired_collate_fn
+from v2.utils.functional import str2bool
+from v2.generator import Generator
+from v2.keypoint2img import read_keypoints
 import essentia.streaming
 from essentia.standard import *
-from generation_model.extractor import FeatureExtractor
+from extractor import FeatureExtractor
 from PIL import Image
-from generation_model.keypoint2img import read_keypoints
 
 
 parser = argparse.ArgumentParser()
