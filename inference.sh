@@ -1,7 +1,9 @@
 #! /bin/bash
-outputs="outputs_runaway" 
+
+# The output dir to store the generated results
+outputs="outputs/viva_la_vida" 
 # Please specify your own music directory
-music_dir="music/runaway" 
+music_dir="music/viva_la_vida" 
 
 # Test (Please set dance_num argument to a even number)
 python3 predict.py --test_dir ${music_dir}  \
