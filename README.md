@@ -29,24 +29,24 @@ Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning.
 
 ### Dataset and Installation
 - We released the dance pose data and the corresponding audio data into [[Google Drive]](https://drive.google.com/file/d/1Xc2cpzkGc7Xh8NVa2ehFmapZJZCtBSH0/view?usp=sharing). 
-Please put the downloaded `data/` into the project directory `DanceRevolution/` and run `prepro.py` that will generate the training data directory `data/train_1min` and test data directory `data/test_1min`. The tree directory of `./data` is displayed as follow:
+Please put the downloaded `data/` into the project directory `DanceRevolution/` and run `prepro.py` that will generate the training data directory `data/train_1min` and test data directory `data/test_1min`. The tree directory of `data/` is displayed as follow:
 ```
-./data
+data/
 │
 └─── audio/
 │      │
-│      └─── ballet_1min
+│      └─── ballet_1min/
 │      │
-│      └─── hiphop_1min
+│      └─── hiphop_1min/
 │      │
-│      └─── pop_1min
+│      └─── pop_1min/
 └─── json/
 │      │
-│      └─── ballet_1min
+│      └─── ballet_1min/
 │      │
-│      └─── hiphop_1min
+│      └─── hiphop_1min/
 │      │
-│      └─── pop_1min
+│      └─── pop_1min/
 │   
 └─── train_1min/
 │
