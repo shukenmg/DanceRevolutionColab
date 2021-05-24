@@ -29,7 +29,19 @@ Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning.
 
 ### Dataset and Installation
 - We released the dance pose data and the corresponding audio data into [[Google Drive]](https://drive.google.com/file/d/1Xc2cpzkGc7Xh8NVa2ehFmapZJZCtBSH0/view?usp=sharing). 
-Please put the downloaded `data/` into the project directory `DanceRevolution/` and run `prepro.py` that will generate the training data directory `data/train_1min` and test data directory `data/test_1min`. The default `data/train_1min` and `data/test_1min` is our train/test division. The pose sequences are extracted from the collected dance videos with original 30FPS while the audio data is m4a format. After the generation is finished, you can run `interpolate_to30fps.py` to increase the 15FPS to 30FPS to produce visually smoother dance videos for the generated results.
+Please put the downloaded `data/` into the project directory `DanceRevolution/` and run `prepro.py` that will generate the training data directory `data/train_1min` and test data directory `data/test_1min`. The tree directory of `./data` is displayed as follow:
+```
+./data
+│
+└─── audio/
+│  
+└─── json/
+│   
+└─── train_1min/
+│
+└─── test_1min/
+```
+The default `data/train_1min` and `data/test_1min` is our train/test division. The pose sequences are extracted from the collected dance videos with original 30FPS while the audio data is m4a format. After the generation is finished, you can run `interpolate_to30fps.py` to increase the 15FPS to 30FPS to produce visually smoother dance videos for the generated results.
 
 - If you plan to train the model with your own dance data (2D), please install [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) for the human pose extraction. After that, please follow the hierarchical structure of directory `data/` to place your own extracted data and run `prepro.py` to generate the training data and test data. Note that, we develope a `interpolate_missing_keyjoints.py` script to find the missing keyjoints to reduce the noise in the pose data, which is introduced by the imperfect extraction of OpenPose.
 
@@ -55,7 +67,7 @@ python3 inference.py --test_dir music/viva_la_vida \
   - `model`: the best checkpoint
   - `dance_num`: the number of generated dance motion sequences needs to be generated for one song
   
-Moreover, we also provide the `inference.sh` to generate dance motion sequences (15FPS) for the test music. Then we increase the FPS of generated motion sequences from 15FPS to  30FPS by the linear interpolation and synthesize final dance videos for the generated results. Note that, our current system only supports the `m4a` music format. But [Online Audio Converter](https://online-audio-converter.com/) could help you convert other music format into m4a with **Standard 128k Quality option**.
+Moreover, we also provide the `inference.sh` to generate dance motion sequences (15FPS) for the test music. Then we increase the FPS of generated motion sequences from 15FPS to  30FPS by the linear interpolation and synthesize final dance videos for the generated results. Note that, our system currently only supports the `m4a` music format. While you can use [Online Audio Converter](https://online-audio-converter.com/) to convert other music format into m4a with **Standard 128k Quality option**.
 
 
 ### Model
