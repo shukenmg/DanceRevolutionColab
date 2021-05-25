@@ -1,9 +1,9 @@
 #! /bin/bash
 
 # The output dir to store the generated results
-outputs="outputs/viva_la_vida" 
+outputs="outputs/demo_song" 
 # Please specify your own music directory
-music_dir="music/viva_la_vida" 
+music_dir="music/demo_song" 
 
 # Test (Please set dance_num argument to a even number)
 python3 predict.py --test_dir ${music_dir}  \

@@ -64,8 +64,8 @@ We released two versions of codebases that have passed the test. In V1 version, 
 ### Inference
 The inference pipeline has been released, you can run the following command to generate dance motion sequences for the test music:
 ```python
-python3 inference.py --test_dir music/viva_la_vida \
-                     --output_dir outputs/viva_la_vida \
+python3 inference.py --test_dir music/demo_song \
+                     --output_dir outputs/demo_song \
                      --model checkpoints/epoch_best.pt \
                      --dance_num 8
 ```
