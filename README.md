@@ -77,6 +77,16 @@ python3 inference.py --test_dir music/demo_song \
   
 Moreover, we also provide the `inference.sh` to generate dance motion sequences (15FPS) for the test music. Then we increase the FPS of generated motion sequences from 15FPS to  30FPS by the linear interpolation and synthesize final dance videos for the generated results. Note that, our system currently only supports the `m4a` music format. While you can use [Online Audio Converter](https://online-audio-converter.com/) to convert other music format into m4a with **Standard 128k Quality option**.
 
+### Future Work
+
+There are some possible future works that worth the community to further explore: 
+
+- More style and rhythm consistent models for the alignment of the input music and the output dance motion sequences.
+- End-to-end models that could work with the raw audio wave rather than the pre-extracted music features.
+- Large-scale Seq2Seq Pre-trained Models for the music-to-dance synthesis, such as the potential DanceGPT.
+- Better automatic evaluation method for assessing the quality of generated dance motion sequences. Since Fréchet inception distance (FID) is the standard metric for evaluating the quality of generated images by GAN. We found the this metric is not that suitable for assessing the quality of dance motion sequences.
+- More precise detection method for the dance motion beats.
+
 
 ### Model
 We will release a pre-trained model and inference code after the main conference of ICLR 2021, please wait.
