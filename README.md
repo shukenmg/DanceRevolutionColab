@@ -124,4 +124,4 @@ If you find this work helpful for your research, please kindly consider citing t
 ```
 
 ### Acknowledgment
-Special thanks to the authors of [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose), [LongFormer](https://github.com/allenai/longformer) and [Video-to-Video](https://github.com/NVIDIA/vid2vid).
+Special thanks to the authors of [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose), [LongFormer](https://github.com/allenai/longformer), [Video-to-Video](https://github.com/NVIDIA/vid2vid) and [3D Human Pose Reconstruction](http://openaccess.thecvf.com/content_ICCV_2019/papers/Ci_Optimizing_Network_Structure_for_3D_Human_Pose_Estimation_ICCV_2019_paper.pdf).
