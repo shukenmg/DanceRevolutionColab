@@ -81,11 +81,11 @@ Moreover, we also provide the `inference.sh` to generate dance motion sequences 
 
 There are some possible future works worth the community to further explore: 
 
-- More style and rhythm consistent models for the alignment of the input music and the output dance motion sequences.
-- End-to-end models that could work with the raw audio wave rather than the pre-extracted music features.
+- More style and rhythm consistent methods for the alignment of the input music and the output dance motion sequences.
+- End-to-end methods that could work with the raw audio wave rather than the pre-extracted music features.
 - Large-scale Seq2Seq Pre-trained Models for the music-to-dance synthesis, such as the potential DanceGPT.
-- Better automatic evaluation method for assessing the quality of generated dance motion sequences. Since Fréchet inception distance (FID) is the standard metric for evaluating the quality of generated images by GAN. In practice, we found this metric is not that suitable for assessing the quality of dance motion sequences.
-- More precise detection method for the dance motion beats.
+- Better automatic evaluation methods for assessing the quality of generated dance motion sequences. Since Fréchet inception distance (FID) is the standard metric for evaluating the quality of generated images by GAN. In practice, we found this metric is not that suitable for assessing the quality of dance motion sequences.
+- More precise detection methods for the dance motion beats.
 
 
 ### Model
