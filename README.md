@@ -15,7 +15,7 @@ Two versions of codebase are released. Have a try to train your AI dancer!
 
 
 ### Introduction
-This repo is the PyTorch implementation of "Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning". Our proposed approach significantly outperforms the existing SOTAs in extensive experiments, including automatic metrics and human judgements. It can generate creative long dance sequences, e.g., about <strong>1-minute length under 15 FPS</strong>, from the input music clips, which are smooth, natural-looking, diverse, style-consistent and beat-matching with the music from test set. With the help of 3D human pose estimation and 3D animation driving, this technique can be used to drive various 3D character models such as the 3D model of Hatsune Miku (very popular virtual character in Japan), and has the great potential for the virtual advertisement video generation.
+This repo is the PyTorch implementation of "[Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning](https://openreview.net/pdf?id=xGZG2kS5bFk)". Our proposed approach significantly outperforms the existing SOTAs in extensive experiments, including automatic metrics and human judgements. It can generate creative long dance sequences, e.g., about <strong>1-minute length under 15 FPS</strong>, from the input music clips, which are smooth, natural-looking, diverse, style-consistent and beat-matching with the music from test set. With the help of 3D human pose estimation and 3D animation driving, this technique can be used to drive various 3D character models such as the 3D model of Hatsune Miku (very popular virtual character in Japan), and has the great potential for the virtual advertisement video generation.
 
 ### Paper 
 Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning. <strong>ICLR 2021</strong>. <br/>
@@ -58,7 +58,7 @@ The default `data/train_1min` and `data/test_1min` is our train/test division. T
 
 ### Training Issues
 We released two versions of codebases that have passed the test. In V1 version, the local self-attention module is implemented base on the [longformer](https://github.com/allenai/longformer) that provides the custom CUDA kernel to accelerate the training speed and save GPU memory for long sequence inputs. While V2 version just implements the local self-attention module via the naive PyTorch implementation, i.e., the attention mask operations. In practice, we found the performance of V2 is more stable and recommend to use V2 version. Here are some training tricks that may be helpful for you:
-- Small batch sizes, such as 32 and 16, would help model to converge better and the model usually converges well at around the 3000-th epoch. It takes about 3 days to train the model well under these settings.
+- Small batch sizes, such as 32 and 16, would help model to converge better and the model usually converges well at around the 3000-th epoch. It takes about 2-3 days to train the model well under these settings. 
 - Increasing sliding window size of local self-attention is beneficial to the more stable performance while the cost (e.g., training time and GPU memory usage) would become high. This point has been empirically justified in the ablation study of encoder structures in the paper. So if you are free of GPU resource limitation, we recommend to use the large sliding window size for training.
 
 ### Inference
@@ -73,7 +73,7 @@ python3 inference.py --test_dir music/demo_song \
   - `test_dir`: the directory to store input .m4a file. Recommend to split the whole music into 1-min clips.
   - `output_dir`: the directory to store generated dance motion sequences
   - `model`: the best checkpoint
-  - `dance_num`: the number of generated dance motion sequences needs to be generated for one song. Please set it to a even number.
+  - `dance_num`: the number of generated dance motion sequences needs to be generated for one song. Please set it to an even number.
   
 Moreover, we also provide the `inference.sh` to generate dance motion sequences (15FPS) for the test music. Then we increase the FPS of generated motion sequences from 15FPS to  30FPS by the linear interpolation and synthesize final dance videos for the generated results. Note that, our system currently only supports the `m4a` music format. While you can use [Online Audio Converter](https://online-audio-converter.com/) to convert other music format into m4a with **Standard 128k Quality option**.
 
@@ -113,7 +113,7 @@ We map the generated skeleton dances to the photo-realistic videos by [Video-to-
 
 
 ### Citation
-If you find this work useful for your research, please cite the following paper:
+If you find this work helpful for your research, please kindly consider citing the following paper in your work:
 ```bibtex
 @inproceedings{huang2021,
   title={ Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning},
@@ -122,3 +122,6 @@ If you find this work useful for your research, please cite the following paper:
   year={2021}
 }
 ```
+
+### Acknowledgment
+Special thanks to the authors of [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose), [LongFormer](https://github.com/allenai/longformer) and [Video-to-Video](https://github.com/NVIDIA/vid2vid).
