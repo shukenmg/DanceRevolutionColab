@@ -79,7 +79,7 @@ Moreover, we also provide the `inference.sh` to generate dance motion sequences 
 
 ### Future Work
 
-There are some possible future works worth the community to further explore: 
+There are some possible future works worth the further exploration: 
 
 - More style and rhythm consistent methods for the alignment of the input music and the output dance motion sequences.
 - End-to-end methods that could work with the raw audio wave rather than the pre-extracted music features.
