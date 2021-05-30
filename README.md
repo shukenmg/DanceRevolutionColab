@@ -53,7 +53,7 @@ The default `data/train_1min` and `data/test_1min` is our train/test division. T
 
 - If you plan to train the model with your own dance data (2D), please install [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) for the human pose extraction. After that, please follow the hierarchical structure of directory `data/` to place your own extracted data and run `prepro.py` to generate the training data and test data. Note that, we develope a `interpolate_missing_keyjoints.py` script to find the missing keyjoints to reduce the noise in the pose data, which is introduced by the imperfect extraction of OpenPose.
 
-- Due to the lack of 3D dance data in hand, we did not test our approach on 3D data. Recently, there is a wonderful paper conducted by Li et al., "Learn to Dance with AIST++: Music Conditioned 3D Dance Generation"(https://arxiv.org/abs/2101.08779), on music-conditioned 3D dance generation, which releases a large-scale 3D human dance motion dataset, AIST++. Just heard from the authors of this paper that our approach also performs well on their released 3D dataset and add our approach as one of compared baselines in their work!
+- Due to the lack of 3D dance data in hand, we did not test our approach on 3D data. Recently, there is a wonderful paper conducted by Li et al., "[Learn to Dance with AIST++: Music Conditioned 3D Dance Generation](https://arxiv.org/abs/2101.08779)", on music-conditioned 3D dance generation, which releases a large-scale 3D human dance motion dataset, AIST++. Just heard from the authors of this paper that our approach also performs well on their released 3D dataset and add our approach as one of compared baselines in their work!
 
 
 ### Training Issues
