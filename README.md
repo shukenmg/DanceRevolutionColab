@@ -67,7 +67,7 @@ python3 train.py --train_dir ../data/train_1min --test_dir ../data/test_1min \
                  --sliding_windown_size 900 --condition_step 10 --lambda_v 0.01 \
                  --lr 0.0001 --epoch 10000
 ```
-And release the checkpoint at 5500-th epoch as follows:
+And release the checkpoint at 5500-th epoch as follows (continue to update):
 
 |   |n_heads=8,d_inner=1024,d_model=200,d_k=d_v=64|
 |---|:---:|
