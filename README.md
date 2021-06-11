@@ -15,16 +15,16 @@ Two versions of codebase are released. Have a try to train your AI dancer!
 
 ### Summary
 
-- Music-Conditioned 2D Dance Generation
+- [Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning](#Dance-Revolution-Long-Term-Dance-Generation-with-Music-via-Curriculum-Learning)
   - [Summary](#summary)
   - [Introduction](#introduction)
   - [Paper](#paper)
   - [Requirements](#requirements)
-  - [Dataset and Installation]()
-  - [Pre-trained Model]()
-  - [Training Issues]()
+  - [Dataset and Installation](#dataset-and-installation)
+  - [Pre-trained Model](#pre-trained-model)
+  - [Training Issues](#training-issues)
   - [Inference](#inference)
-  - [Future Work]()
+  - [Future Work](#future-work)
   - [Citation](#citation)
   - [Acknowledgment](#acknowledgment)
 
