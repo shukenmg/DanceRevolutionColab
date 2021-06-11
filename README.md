@@ -71,7 +71,7 @@ And release the checkpoint at 5500-th epoch as follows (continue to update):
 
 |   |n_heads=8,d_inner=1024,d_model=200,d_k=d_v=64|
 |---|:---:|
-| **n_layers=1,seq_len=900**  |[Model](https://drive.google.com/file/d/1BlqXygWtOd9lpGgkdmAUU3eV7rV1fQRR/view?usp=sharing)|
+| **n_layers=1,seq_len=900**  |[[Model]](https://drive.google.com/file/d/1BlqXygWtOd9lpGgkdmAUU3eV7rV1fQRR/view?usp=sharing)|
 
 
 ### Training Issues
