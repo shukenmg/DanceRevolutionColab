@@ -64,22 +64,15 @@ python3 train.py --train_dir ../data/train_1min --test_dir ../data/test_1min \
                  --batch_size 48 --seq_len 900 --max_seq_len 4500 \
                  --frame_emb_size 200 --d_pose_vec 50 --pose_emb_size 50 \
                  --d_inner 1024 --n_layers 1 \
-                 --sliding_windown_size 900 --condition_step 10 --lambda_v 0.01
+                 --sliding_windown_size 900 --condition_step 10 --lambda_v 0.01 \
+                 --d_frame_vec 438 --d_pose_vec 50 --frame_emb_size 200 --pose_emb_size 50 \
+                 --lr 0.0001 --epoch 10000
 ```
 We release the pre-trained music-to-dance generation models:
 
-|   |d_inner=1024|d_k=64|d_model=200|d_frame_vec=438|d_frame_vec=438|d_pose_vec=50|frame_emb_size=200|
+|   |n_heads=8|d_inner=1024|d_model=200|d_k=d_v=64|
 |---|:---:|:---:|:---:|:---:|
 | **n_layers=1,seq_len=900**  |[**2/128 (BERT-Tiny)**][2_128]|[2/256][2_256]|[2/512][2_512]|[2/768][2_768]|
-
-|   |H=128|H=256|H=512|H=768|
-|---|:---:|:---:|:---:|:---:|
-| **L=2**  |[**2/128 (BERT-Tiny)**][2_128]|[2/256][2_256]|[2/512][2_512]|[2/768][2_768]|
-| **L=4**  |[4/128][4_128]|[**4/256 (BERT-Mini)**][4_256]|[**4/512 (BERT-Small)**][4_512]|[4/768][4_768]|
-| **L=6**  |[6/128][6_128]|[6/256][6_256]|[6/512][6_512]|[6/768][6_768]|
-| **L=8**  |[8/128][8_128]|[8/256][8_256]|[**8/512 (BERT-Medium)**][8_512]|[8/768][8_768]|
-| **L=10** |[10/128][10_128]|[10/256][10_256]|[10/512][10_512]|[10/768][10_768]|
-| **L=12** |[12/128][12_128]|[12/256][12_256]|[12/512][12_512]|[**12/768 (BERT-Base)**][12_768]|
 
 
 ### Training Issues
