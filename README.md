@@ -72,7 +72,7 @@ We release the pre-trained music-to-dance generation models:
 
 |   |n_heads=8,d_inner=1024,d_model=200,d_k=d_v=64|
 |---|:---:|
-| **n_layers=1,seq_len=900**  |[**2/128 (BERT-Tiny)**]|
+| **n_layers=1,seq_len=900**  |[Model]|
 
 
 ### Training Issues
