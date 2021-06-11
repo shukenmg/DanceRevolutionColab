@@ -70,9 +70,9 @@ python3 train.py --train_dir ../data/train_1min --test_dir ../data/test_1min \
 ```
 We release the pre-trained music-to-dance generation models:
 
-|   |n_heads=8|d_inner=1024|d_model=200|d_k=d_v=64|
-|---|:---:|:---:|:---:|:---:|
-| **n_layers=1,seq_len=900**  |[**2/128 (BERT-Tiny)**][2_128]|[2/256][2_256]|[2/512][2_512]|[2/768][2_768]|
+|   |n_heads=8,d_inner=1024,d_model=200,d_k=d_v=64|
+|---|:---:|
+| **n_layers=1,seq_len=900**  |[**2/128 (BERT-Tiny)**]|
 
 
 ### Training Issues
