@@ -56,6 +56,23 @@ The default `data/train_1min` and `data/test_1min` is our train/test division. T
 - Due to the lack of 3D dance data in hand, we did not test our approach on 3D data. Recently, there is a wonderful paper conducted by Li et al., "[Learn to Dance with AIST++: Music Conditioned 3D Dance Generation](https://arxiv.org/abs/2101.08779)", on music-conditioned 3D dance generation, which releases a large-scale 3D human dance motion dataset, AIST++. Just heard from the authors of this paper that our approach also performs well on their released 3D dataset and add our approach as one of compared baselines in their work!
 
 
+### Model
+We train the model according to the following command:
+```python
+python3 train.py --train_dir ../data/train_1min --test_dir ../data/test_1min \
+                 --output_dir checkpoints/layers1_win900_schedule100_condition10_detach \
+                 --batch_size 48 --seq_len 900 --max_seq_len 4500 \
+                 --frame_emb_size 200 --d_pose_vec 50 --pose_emb_size 50 \
+                 --d_inner 1024 --n_layers 1 \
+                 --sliding_windown_size 900 --condition_step 10 --lambda_v 0.01
+```
+We release the pre-trained music-to-dance generation models:
+
+|   |d_inner=1024|d_k=64|d_model=200|d_frame_vec=438|d_frame_vec=438|d_pose_vec=50|frame_emb_size=200|
+|---|:---:|:---:|:---:|:---:|
+| **n_layers=1,seq_len=900**  |[**2/128 (BERT-Tiny)**][2_128]|[2/256][2_256]|[2/512][2_512]|[2/768][2_768]|
+
+
 ### Training Issues
 We released two versions of codebases that have passed the test. In V1 version, the local self-attention module is implemented base on the [longformer](https://github.com/allenai/longformer) that provides the custom CUDA kernel to accelerate the training speed and save GPU memory for long sequence inputs. While V2 version just implements the local self-attention module via the naive PyTorch implementation, i.e., the attention mask operations. In practice, we found the performance of V2 is more stable and recommend to use V2 version. Here are some training tricks that may be helpful for you:
 - Small batch sizes, such as 32 and 16, would help model to converge better and the model usually converges well at around the 3000-th epoch. It takes about 2-3 days to train the model well under these settings. 
@@ -86,10 +103,6 @@ There are some possible future works worth the further exploration:
 - Large-scale Seq2Seq Pre-trained Models for the music-to-dance synthesis, such as the potential DanceGPT.
 - Better automatic evaluation methods for assessing the quality of generated dance motion sequences. Since Fréchet inception distance (FID) is the standard metric for evaluating the quality of generated images by GAN. In practice, we found this metric is not suitable for assessing the quality of dance motion sequences.
 - More precise detection methods for the dance motion beats.
-
-
-### Model
-We will release a pre-trained model and inference code after the main conference of ICLR 2021, please wait.
 
 ### Generated Example Videos
 - Ballet style
