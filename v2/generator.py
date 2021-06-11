@@ -60,6 +60,7 @@ class Generator(object):
 
             src_seq_len = src_seq.size(1)
             bsz, tgt_seq_len, dim = tgt_seq.size()
+            tgt_seq_len = 1
             generated_frames_num = src_seq_len - tgt_seq_len
 
             hidden, dec_output, out_seq = self.model.module.init_decoder_hidden(bsz)
@@ -68,19 +69,22 @@ class Generator(object):
             enc_mask = get_subsequent_mask(src_seq, self.model_args.sliding_windown_size)
             enc_outputs, *_ = self.model.module.encoder(src_seq, src_pos, enc_mask)
 
+            preds = []
             for i in range(tgt_seq_len):
-                dec_input = tgt_seq[:, i]
+                # dec_input = tgt_seq[:, i]
+                dec_input = dec_output
                 dec_output, vec_h, vec_c = self.model.module.decoder(dec_input, vec_h, vec_c)
                 dec_output = torch.cat([dec_output, enc_outputs[:, i]], 1)
                 dec_output = self.model.module.linear(dec_output)
-                out_seq = torch.cat([out_seq, dec_output], 1)
+                preds.append(dec_output)
 
             for i in range(generated_frames_num):
                 dec_input = dec_output
                 dec_output, vec_h, vec_c = self.model.module.decoder(dec_input, vec_h, vec_c)
                 dec_output = torch.cat([dec_output, enc_outputs[:, i + tgt_seq_len]], 1)
                 dec_output = self.model.module.linear(dec_output)
-                out_seq = torch.cat([out_seq, dec_output], 1)
+                preds.append(dec_output)
 
-        out_seq = out_seq[:, 1:].view(bsz, -1, dim)
-        return out_seq
+        outputs = [z.unsqueeze(1) for z in preds]
+        outputs = torch.cat(outputs, dim=1)
+        return outputs

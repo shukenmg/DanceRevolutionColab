@@ -44,6 +44,7 @@ parser.add_argument('--height', type=int, default=720,
                     help='the height pixels of target image')
 
 args = parser.parse_args()
+print(args)
 
 pose_keypoints_num = 25
 face_keypoints_num = 70
@@ -62,6 +63,7 @@ def visualize_json(fname, output_dir, dance_dir, dance_path):
 def visualize(data_dir, output_dir, worker_num=16):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
+
     dance_dirs = sorted(os.listdir(data_dir))
     for i, dance_dir in enumerate(dance_dirs):    
         dance_path = os.path.join(data_dir, dance_dir)

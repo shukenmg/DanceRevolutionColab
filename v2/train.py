@@ -163,6 +163,9 @@ def main():
 
     print(model)
 
+    for name, parameters in model.named_parameters():
+        print(name, ':', parameters.size())
+
     # Data Parallel to use multi-gpu
     model = nn.DataParallel(model).to(device)
 

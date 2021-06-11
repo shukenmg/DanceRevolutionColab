@@ -33,7 +33,7 @@ def get_subsequent_mask(seq, sliding_windown_size):
     mask = torch.tril(mask, diagonal=sliding_windown_size)
     mask = 1 - mask
     # print(mask)
-    return mask #.bool()
+    return mask.bool()
 
 
 def get_sinusoid_encoding_table(n_position, d_hid, padding_idx=None):
@@ -197,12 +197,14 @@ class Model(nn.Module):
         prediction_mask = torch.zeros(seq_len, int(epoch_i * self.lambda_v))
         mask = torch.cat([prediction_mask, groundtruth_mask], 1).view(-1)[:seq_len]  # for random
 
+        preds = []
         for i in range(seq_len):
             dec_input = tgt_seq[:, i] if mask[i] == 1 else dec_output.detach()  # dec_output
             dec_output, vec_h, vec_c = self.decoder(dec_input, vec_h, vec_c)
             dec_output = torch.cat([dec_output, enc_outputs[:, i]], 1)
             dec_output = self.linear(dec_output)
-            out_seq = torch.cat([out_seq, dec_output], 1)
+            preds.append(dec_output)
 
-        out_seq = out_seq[:, 1:].view(bsz, seq_len, -1)
-        return out_seq
+        outputs = [z.unsqueeze(1) for z in preds]
+        outputs = torch.cat(outputs, dim=1)
+        return outputs
