@@ -57,7 +57,7 @@ The default `data/train_1min` and `data/test_1min` is our train/test division. T
 
 
 ### Pre-trained Model
-We train the model according to the following command:
+We train the model according to the following command using the v2 code:
 ```python
 python3 train.py --train_dir ../data/train_1min --test_dir ../data/test_1min \
                  --output_dir checkpoints/layers1_win900_schedule100_condition10_detach \
