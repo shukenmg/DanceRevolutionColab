@@ -61,7 +61,7 @@ We train the model according to the following command:
 ```python
 python3 train.py --train_dir ../data/train_1min --test_dir ../data/test_1min \
                  --output_dir checkpoints/layers1_win900_schedule100_condition10_detach \
-                 --batch_size 48 --seq_len 900 --max_seq_len 4500 \
+                 --batch_size 32 --seq_len 900 --max_seq_len 4500 \
                  --frame_emb_size 200 --d_pose_vec 50 --pose_emb_size 50 \
                  --d_inner 1024 --n_layers 1 \
                  --sliding_windown_size 900 --condition_step 10 --lambda_v 0.01 \
