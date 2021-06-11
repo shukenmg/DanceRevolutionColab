@@ -56,7 +56,7 @@ The default `data/train_1min` and `data/test_1min` is our train/test division. T
 - Due to the lack of 3D dance data in hand, we did not test our approach on 3D data. Recently, there is a wonderful paper conducted by Li et al., "[Learn to Dance with AIST++: Music Conditioned 3D Dance Generation](https://arxiv.org/abs/2101.08779)", on music-conditioned 3D dance generation, which releases a large-scale 3D human dance motion dataset, AIST++. Just heard from the authors of this paper that our approach also performs well on their released 3D dataset and add our approach as one of compared baselines in their work!
 
 
-### Model
+### Pre-trained Model
 We train the model according to the following command:
 ```python
 python3 train.py --train_dir ../data/train_1min --test_dir ../data/test_1min \
