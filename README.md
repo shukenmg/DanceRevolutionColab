@@ -13,6 +13,21 @@ The code & pose data are released!
 **\*\*\*\*\*\*\*\*\* April 4, 2021 \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*** <br>
 Two versions of codebase are released. Have a try to train your AI dancer!
 
+### Summary
+
+- Music-Conditioned 2D Dance Generation
+  - [Summary](#summary)
+  - [Introduction](#introduction)
+  - [Paper](#paper)
+  - [Requirements](#requirements)
+  - [Dataset and Installation]()
+  - [Pre-trained Model]()
+  - [Training Issues]()
+  - [Inference](#inference)
+  - [Future Work]()
+  - [Citation](#citation)
+  - [Acknowledgment](#acknowledgment)
+
 
 ### Introduction
 This repo is the PyTorch implementation of "[Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning](https://openreview.net/pdf?id=xGZG2kS5bFk)". Our proposed approach significantly outperforms the existing SOTAs in extensive experiments, including automatic metrics and human judgements. It can generate creative long dance sequences, e.g., about <strong>1-minute length under 15 FPS</strong>, from the input music clips, which are smooth, natural-looking, diverse, style-consistent and beat-matching with the music from test set. With the help of 3D human pose estimation and 3D animation driving, this technique can be used to drive various 3D character models such as the 3D model of Hatsune Miku (very popular virtual character in Japan), and has the great potential for the virtual advertisement video generation.
