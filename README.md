@@ -63,15 +63,15 @@ python3 train.py --train_dir ../data/train_1min --test_dir ../data/test_1min \
                  --output_dir checkpoints/layers1_win900_schedule100_condition10_detach \
                  --batch_size 32 --seq_len 900 --max_seq_len 4500 \
                  --d_frame_vec 438 --d_pose_vec 50 --frame_emb_size 200 --pose_emb_size 50 \
-                 --d_inner 1024 --n_layers 1 \
+                 --n_layers 1 --n_head 8 --d_inner 1024  --d_model 200 --d_k 64 --d_v 64 \
                  --sliding_windown_size 900 --condition_step 10 --lambda_v 0.01 \
                  --lr 0.0001 --epoch 10000
 ```
-We release the pre-trained music-to-dance generation models:
+And release the checkpoint at 5500-th epoch as follows:
 
 |   |n_heads=8,d_inner=1024,d_model=200,d_k=d_v=64|
 |---|:---:|
-| **n_layers=1,seq_len=900**  |[Model]|
+| **n_layers=1,seq_len=900**  |[Model](https://drive.google.com/file/d/1BlqXygWtOd9lpGgkdmAUU3eV7rV1fQRR/view?usp=sharing)|
 
 
 ### Training Issues
