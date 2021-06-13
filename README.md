@@ -100,7 +100,7 @@ The inference pipeline has been released, you can run the following command to g
 python3 inference.py --test_dir music/demo_song \
                      --output_dir outputs/demo_song \
                      --model checkpoints/epoch_best.pt \
-                     --dance_num 8
+                     --dance_num 6
 ```
 - Args
   - `test_dir`: the directory to store input .m4a file. Recommend to split the whole music into 1-min clips.
@@ -108,7 +108,7 @@ python3 inference.py --test_dir music/demo_song \
   - `model`: the best checkpoint
   - `dance_num`: the number of dance motion sequences needs to be generated for one song. Please set it to an even number.
   
-Moreover, we also provide the `inference.sh` to generate dance motion sequences (15FPS) for the test music. Then we increase the FPS of generated motion sequences from 15FPS to  30FPS by the linear interpolation and synthesize final dance videos for the generated results. Note that, our system currently only supports the `m4a` music format. While you can use [Online Audio Converter](https://online-audio-converter.com/) to convert other music format into m4a with **Standard 128k Quality option**.
+Moreover, we also provide the `inference.sh` to generate dance motion sequences (15FPS) for the test music. Then we increase the FPS of generated motion sequences from 15FPS to  30FPS by the linear interpolation and synthesize final dance videos for the generated results. Note that, our system currently only supports the `m4a` music format. While you can use [Online Audio Converter](https://online-audio-converter.com/) to convert other music format into `m4a` with **Standard 128k Quality option**.
 
 ### Future Work
 
@@ -152,7 +152,7 @@ We map the generated skeleton dances to the photo-realistic videos by [Video-to-
 
 
 ### Citation
-If you find this work helpful for your research, please consider citing the following paper in your work:
+If you find this work helpful for your research, please cite the following paper in your work:
 ```bibtex
 @inproceedings{huang2021,
   title={ Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning},
