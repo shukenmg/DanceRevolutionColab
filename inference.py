@@ -53,6 +53,7 @@ face_keypoints_num = 70
 hand_left_keypoints_num = 21
 hand_right_keypoints_num = 21
 
+# only using src_seq and src_pos at inference time
 def paired_collate_fn(insts):
     src_seq = insts
     src_pos = np.array([[
