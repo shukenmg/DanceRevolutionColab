@@ -13,7 +13,7 @@ import numpy as np
 from multiprocessing import Pool
 from functools import partial
 from random import shuffle
-from v2.dataset import DanceDataset, paired_collate_fn
+from v2.dataset import DanceDataset #, paired_collate_fn
 from v2.utils.functional import str2bool
 from v2.generator import Generator
 from v2.keypoint2img import read_keypoints
@@ -52,6 +52,16 @@ pose_keypoints_num = 25
 face_keypoints_num = 70
 hand_left_keypoints_num = 21
 hand_right_keypoints_num = 21
+
+def paired_collate_fn(insts):
+    src_seq = insts
+    src_pos = np.array([[
+        pos_i + 1 for pos_i, v_i in enumerate(inst)] for inst in src_seq])
+
+    src_seq = torch.FloatTensor(src_seq)
+    src_pos = torch.LongTensor(src_pos)
+
+    return src_seq, src_pos
 
 def visualize_json(fname, json_path, img_path):
     fname_prefix = fname.split('_')[0]
