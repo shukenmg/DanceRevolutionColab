@@ -58,6 +58,7 @@ class Generator(object):
         """ Generate dance pose in one batch """
         with torch.no_grad():
 
+            # Use the pre-defined begin of pose (BOP) to generate whole sequence
             bsz, src_seq_len, _ = src_seq.size()
             # bsz, tgt_seq_len, dim = tgt_seq.size()
             tgt_seq_len = 1

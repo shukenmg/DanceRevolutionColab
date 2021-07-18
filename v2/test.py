@@ -161,6 +161,7 @@ def main():
         src_seq, src_pos, tgt_seq = map(lambda x: x.to(device), batch)
         # Choose the first 10 frames as the beginning
         tgt_seq = tgt_seq[:, :10, :]
+        # Change the way to pass tgt_seq
         poses = generator.generate(src_seq, src_pos, tgt_seq=tgt_seq)
         results.append(poses)
 
