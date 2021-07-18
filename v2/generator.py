@@ -54,12 +54,12 @@ class Generator(object):
         self.model = model.to(self.device)
         self.model.eval()
 
-    def generate(self, src_seq, src_pos, tgt_seq):
+    def generate(self, src_seq, src_pos, tgt_seq=None):
         """ Generate dance pose in one batch """
         with torch.no_grad():
 
-            src_seq_len = src_seq.size(1)
-            bsz, tgt_seq_len, dim = tgt_seq.size()
+            bsz, src_seq_len, _ = src_seq.size()
+            # bsz, tgt_seq_len, dim = tgt_seq.size()
             tgt_seq_len = 1
             generated_frames_num = src_seq_len - tgt_seq_len
 

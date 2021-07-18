@@ -89,7 +89,7 @@ def visualize(data_dir, worker_num=16):
 def interpolate(frames, stride=10):
     new_frames=[]
     for i in range(len(frames)-1):
-        
+
         inter_points=np.zeros((25,3))
         left_points = frames[i]
         right_points = frames[i+1]
@@ -106,7 +106,7 @@ def interpolate(frames, stride=10):
 
 def store(frames, out_dance_path):
     for i, pose_points in enumerate(frames):
-        
+
 
         people_dicts = []
         people_dict = {'pose_keypoints_2d': np.array(pose_points).reshape(-1).tolist(),
@@ -132,12 +132,12 @@ def convert_to_30fps(dance_path, out_dance_path):
         json_file = os.path.join(dance_path, filename)
         with open(json_file) as f:
             keypoint_dicts = json.loads(f.read())['people']
-           
+
             keypoint_dict = keypoint_dicts[0]
             pose_points = np.array(keypoint_dict['pose_keypoints_2d']).reshape(25, 3).tolist()
-            
+
             frames.append(pose_points)
-           
+
     # Recover the missing key points
     frames=interpolate(frames)
     # Store the corrected frames
@@ -151,7 +151,7 @@ def write2json(dances,audio_fnames):
         num_poses = dances[i].shape[0]
         dances[i] = dances[i].reshape(num_poses, pose_keypoints_num, 2)
         dance_path = os.path.join(args.output_dir, audio_fnames[i//args.dance_num].split(".m4a")[0],
-            f'{i%args.dance_num:02d}',"json") 
+            f'{i%args.dance_num:02d}',"json")
 
         if not os.path.exists(dance_path):
             os.makedirs(dance_path)
@@ -260,7 +260,7 @@ def extract_acoustic_feature(input_audio_dir, fps='30',sr=15360):
         feature = feature.transpose(1, 0)
         print(f'acoustic feature -> {feature.shape}')
         music_data.append(feature.tolist())
-   
+
     if fps == '30':
         new_musics = music_data
     else:
@@ -269,7 +269,7 @@ def extract_acoustic_feature(input_audio_dir, fps='30',sr=15360):
             seq_len = (len(music_data[i])//2)*2
             new_musics.append([music_data[i][j] for j in range(seq_len) if j%2==0])
             new_musics.append([music_data[i][j] for j in range(seq_len) if j%2==1])
-   
+
     return new_musics, audio_fnames
 
 
@@ -295,7 +295,7 @@ def main():
         src_seq, src_pos = map(lambda x: x.to(device), batch)
         generate_num = args.dance_num//2 if args.fps=='15' else args.dance_num
         for _ in range(generate_num):
-            poses = generator.generate(src_seq, src_pos, dim=args.pose_dim)
+            poses = generator.generate(src_seq, src_pos)
             results.append(poses)
 
     np_dances = []

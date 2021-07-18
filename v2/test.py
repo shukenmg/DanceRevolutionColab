@@ -65,7 +65,7 @@ def visualize(data_dir, output_dir, worker_num=16):
         os.makedirs(output_dir)
 
     dance_dirs = sorted(os.listdir(data_dir))
-    for i, dance_dir in enumerate(dance_dirs):    
+    for i, dance_dir in enumerate(dance_dirs):
         dance_path = os.path.join(data_dir, dance_dir)
         fnames = sorted(os.listdir(dance_path))
         if not os.path.exists(f'{output_dir}/{dance_dir}'):
@@ -78,7 +78,7 @@ def visualize(data_dir, output_dir, worker_num=16):
         pool.map(partial_func, enumerate(fnames))
         pool.close()
         pool.join()
-        
+
         print(f'visualize {dance_dir}')
 
 
@@ -161,7 +161,7 @@ def main():
         src_seq, src_pos, tgt_seq = map(lambda x: x.to(device), batch)
         # Choose the first 10 frames as the beginning
         tgt_seq = tgt_seq[:, :10, :]
-        poses = generator.generate(src_seq, src_pos, tgt_seq)
+        poses = generator.generate(src_seq, src_pos, tgt_seq=tgt_seq)
         results.append(poses)
 
     # Visualize the generated dance poses
