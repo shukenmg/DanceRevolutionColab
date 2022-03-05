@@ -25,7 +25,6 @@ Two versions of codebase are released. Have a try to train your AI dancer!
   - [Training Issues](#training-issues)
   - [Inference](#inference)
   - [Future Work](#future-work)
-  - [Citation](#citation)
   - [Acknowledgment](#acknowledgment)
 
 
@@ -33,8 +32,8 @@ Two versions of codebase are released. Have a try to train your AI dancer!
 This repo is the PyTorch implementation of "[Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning](https://stonyhu.github.io/dancerev/)". Our proposed approach significantly outperforms the existing SOTAs in extensive experiments, including automatic metrics and human judgements. It can generate creative long dance sequences, e.g., about <strong>1-minute length under 15 FPS</strong>, from the input music clips, which are smooth, natural-looking, diverse, style-consistent and beat-matching with the music from test set. With the help of 3D human pose estimation and 3D animation driving, this technique can be used to drive various 3D character models such as the 3D model of Hatsune Miku (very popular virtual character in Japan), and has the great potential for the virtual advertisement video generation.
 
 ### Project 
-Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning. <strong>ICLR 2021</strong>. <br/>
-[Ruozi Huang*](https://github.com/rose1111111), [Huang Hu*](https://stonyhu.github.io/), [Wei Wu](https://scholar.google.co.jp/citations?user=YtqXSzMAAAAJ&hl=en), [Kei Sawada](http://www.sp.nitech.ac.jp/~swdkei/index.html), [Mi Zhang](http://homepage.fudan.edu.cn/zhangmi/en) and [Daxin Jiang](https://www.microsoft.com/en-us/research/people/djiang/). <br/> 
+Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning. arXiv:2006.06119, 2020. <br/>
+Ruozi Huang*, Huang Hu*, Wei Wu, Kei Sawada, Mi Zhang and Daxin Jiang. <br/> 
 [[Project]](https://stonyhu.github.io/dancerev/) [[Paper]](https://openreview.net/pdf?id=xGZG2kS5bFk) [[YouTube]](https://youtu.be/lmE20MEheZ8) 
 
 ### Requirements
@@ -68,7 +67,7 @@ The default `data/train_1min` and `data/test_1min` is our train/test division. T
 
 - If you plan to train the model with your own dance data (2D), please install [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) for the human pose extraction. After that, please follow the hierarchical structure of directory `data/` to place your own extracted data and run `prepro.py` to generate the training data and test data. Note that, we develope a `interpolate_missing_keyjoints.py` script to find the missing keyjoints to reduce the noise in the pose data, which is introduced by the imperfect extraction of OpenPose.
 
-- Due to the lack of 3D dance data in hand, we did not test our approach on 3D data. Recently, there is a wonderful paper conducted by Li et al., "[Learn to Dance with AIST++: Music Conditioned 3D Dance Generation](https://arxiv.org/abs/2101.08779)", on music-conditioned 3D dance generation, which releases a large-scale 3D human dance motion dataset, AIST++. Just heard from the authors of this paper that our approach also performs well on their released 3D dataset and add our approach as one of compared baselines in their work!
+- Due to the lack of 3D dance data in hand, we did not test our approach on 3D data. Recently, there is a wonderful paper conducted by Li et al., "[AI Choreographer: Music Conditioned 3D Dance Generation with AIST++](https://arxiv.org/abs/2101.08779)", on music-conditioned 3D dance generation, which releases a large-scale 3D human dance motion dataset, [AIST++](https://google.github.io/aistplusplus_dataset/factsfigures.html). Just heard from the authors of this paper that our approach also works on their released dataset.
 
 
 ### Pre-trained Model
@@ -150,17 +149,6 @@ We map the generated skeleton dances to the photo-realistic videos by [Video-to-
 
 - Driving 3D model by applying [3D human pose estimation](http://openaccess.thecvf.com/content_ICCV_2019/papers/Ci_Optimizing_Network_Structure_for_3D_Human_Pose_Estimation_ICCV_2019_paper.pdf)  and Unity animation to generated skeleton dances.
 
-
-### Citation
-If you find this work helpful for your research, please cite the following paper in your work:
-```bibtex
-@inproceedings{huang2021,
-  title={ Dance Revolution: Long-Term Dance Generation with Music via Curriculum Learning},
-  author={Ruozi Huang and Huang Hu and Wei Wu and Kei Sawada and Mi Zhang and Daxin Jiang},
-  booktitle={International Conference on Learning Representations},
-  year={2021}
-}
-```
 
 ### Acknowledgment
 Special thanks to the authors of [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose), [LongFormer](https://github.com/allenai/longformer), [Video-to-Video](https://github.com/NVIDIA/vid2vid), [3D Human Pose Reconstruction](http://openaccess.thecvf.com/content_ICCV_2019/papers/Ci_Optimizing_Network_Structure_for_3D_Human_Pose_Estimation_ICCV_2019_paper.pdf) and [Dancing2Music](https://github.com/NVlabs/Dancing2Music).
