@@ -1,15 +1,15 @@
 #! /bin/bash
 
 # The output dir to store the generated results
-outputs="outputs/demo_song" 
+outputs="./outputs/music" 
 # Please specify your own music directory
-music_dir="music/demo_song" 
+music_dir="./music" 
 
 # Test (Please set dance_num argument to a even number)
-python3 predict.py --test_dir ${music_dir}  \
+python3 inference.py --test_dir ${music_dir}  \
                    --output_dir ${outputs} \
-                   --model checkpoints/epoch_best.pt \
-                   --dance_num 8
+                   --model ./checkpoints/epoch_5500.pt \
+                   --dance_num 2
 
 files=$(ls ${outputs})
 for filename in $files
@@ -30,4 +30,3 @@ do
 done
 
 echo "Finish!"
-
