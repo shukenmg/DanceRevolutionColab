@@ -66,6 +66,7 @@ def paired_collate_fn(insts):
 
 def visualize_json(fname, json_path, img_path):
     fname_prefix = fname.split('_')[0]
+    print('Generating: ' + fname_prefix)
     json_file = os.path.join(json_path, fname)
     img = Image.fromarray(read_keypoints(json_file, (args.width, args.height),
                           remove_face_labels=False, basic_point_only=False))
